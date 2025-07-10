@@ -4,7 +4,7 @@ steps:
         image: woodpeckerci/plugin-docker-buildx:6.0.1
         settings:
             # Clone a repository from GitHub (main branch)
-            context: "https://github.com/traefik/whoami#main"
+            context: "https://github.com/traefik/whoami#master"
             # Use the Dockerfile in the root of the repository
             dockerfile: Dockerfile
             # Target repository in your private registry
