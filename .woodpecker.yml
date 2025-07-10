@@ -17,7 +17,7 @@ steps:
             # Use the Dockerfile in the root of the repository
             dockerfile: Dockerfile
             # Target repository in your private registry
-            repo: $REGISTRY_URL/whoami
+            repo: registry.oci.w3studio.it/whoami
             # Tag the image as 'latest' and with the commit SHA
             tags: latest, ${CI_COMMIT_SHA}
             # Push the built image to the registry
