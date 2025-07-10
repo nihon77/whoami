@@ -1,6 +1,6 @@
 environment:
     # Pass registry credentials as environment variables
-    REGISTRY_USER:
+    REGISTRY_USERNAME:
         from_secret: REGISTRY_USERNAME
     REGISTRY_PASSWORD:
         from_secret: REGISTRY_PASSWORD
@@ -17,7 +17,7 @@ steps:
             # Use the Dockerfile in the root of the repository
             dockerfile: Dockerfile
             # Target repository in your private registry
-            repo: registry.oci.w3studio.it/whoami
+            repo: $REGISTRY_URL/whoami
             # Tag the image as 'latest' and with the commit SHA
             tags: latest, ${CI_COMMIT_SHA}
             # Push the built image to the registry
@@ -34,14 +34,6 @@ steps:
     # Update the running service in Docker Swarm with the new image
     update-stack:
         image: docker
-        environment:
-            # Pass registry credentials as environment variables
-            REGISTRY_USER:
-                from_secret: REGISTRY_USERNAME
-            REGISTRY_PASSWORD:
-                from_secret: REGISTRY_PASSWORD
-            REGISTRY_URL: 
-                from_secret: REGISTRY_URL
         volumes:
             # Mount Docker socket to allow Docker CLI commands This needs Trust Volume checked in the repository settings in woodpeacker!
             - /var/run/docker.sock:/var/run/docker.sock
