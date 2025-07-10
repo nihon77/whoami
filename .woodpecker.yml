@@ -16,10 +16,14 @@ steps:
             tags: latest, ${CI_COMMIT_SHA}
             # Push the built image to the registry
             push: true
-            # Registry address for authentication
+            # Use secrets for registry Registry address for authentication
             registry: 
                 from_secret: REGISTRY_URL
             # Use secrets for registry username and password
+            username:
+                from_secret: OCI_REGISTRY_USER
+            password:
+                from_secret: OCI_REGISTRY_PASSWORD
 
     # Update the running service in Docker Swarm with the new image
     update-stack:
