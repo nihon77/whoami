@@ -4,9 +4,9 @@ steps:
         image: woodpeckerci/plugin-docker-buildx:6.0.1
         settings:
             # Clone a repository from GitHub (main branch)
-            context: "https://github.com/traefik/whoami#master"
+            context: "https://github.com/traefik/whoami.git#master"
             # Use the Dockerfile in the root of the repository
-            dockerfile: buildx.Dockerfile
+            dockerfile: Dockerfile
             # Target repository in your private registry
             repo: registry.oci.w3studio.it/whoami
             # Tag the image as 'latest' and with the commit SHA
