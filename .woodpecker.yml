@@ -4,7 +4,9 @@ steps:
     # Build and push the Docker image using Buildx 6
     build-whoami:
         image: woodpeckerci/plugin-docker-buildx:6.0.1
-        environment:
+        
+        settings:
+            environment:
             # Pass registry credentials as environment variables
             REGISTRY_USERNAME:
                 from_secret: REGISTRY_USERNAME
@@ -12,7 +14,6 @@ steps:
                 from_secret: REGISTRY_PASSWORD
             REGISTRY_URL: 
                 from_secret: REGISTRY_URL
-        settings:
             # Clone a repository from GitHub (main branch)
             context: "https://github.com/traefik/whoami.git#master"
             # Use the Dockerfile in the root of the repository
