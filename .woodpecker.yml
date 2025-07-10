@@ -15,7 +15,7 @@ steps:
             dockerfile: Dockerfile
             # Target repository in your private registry
             repo:
-                from_secret: REGISTRY_URL
+                from_secret: WHOAMI_REGISTRY_REPO
             # Tag the image as 'latest' and with the commit SHA
             tags: latest, ${CI_COMMIT_SHA}
             # Push the built image to the registry
