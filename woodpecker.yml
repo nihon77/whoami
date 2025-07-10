@@ -1,5 +1,5 @@
 steps:
-    # Build and push the Docker image using Buildx
+    # Build and push the Docker image using Buildx 6
     build-streamv:
         image: woodpeckerci/plugin-docker-buildx:6.0.1
         settings:
