@@ -7,13 +7,13 @@ steps:
         
         settings:
             environment:
-            # Pass registry credentials as environment variables
-            REGISTRY_USERNAME:
-                from_secret: REGISTRY_USERNAME
-            REGISTRY_PASSWORD:
-                from_secret: REGISTRY_PASSWORD
-            REGISTRY_URL: 
-                from_secret: REGISTRY_URL
+                # Pass registry credentials as environment variables
+                REGISTRY_USERNAME:
+                    from_secret: REGISTRY_USERNAME
+                REGISTRY_PASSWORD:
+                    from_secret: REGISTRY_PASSWORD
+                REGISTRY_URL: 
+                    from_secret: REGISTRY_URL
             # Clone a repository from GitHub (main branch)
             context: "https://github.com/traefik/whoami.git#master"
             # Use the Dockerfile in the root of the repository
