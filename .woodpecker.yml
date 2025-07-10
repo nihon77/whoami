@@ -20,10 +20,6 @@ steps:
             registry: 
                 from_secret: REGISTRY_URL
             # Use secrets for registry username and password
-            username:
-                from_secret: REGISTRY_USERNAME
-            password:
-                from_secret: REGISTRY_PASSWORD
 
     # Update the running service in Docker Swarm with the new image
     update-stack:
