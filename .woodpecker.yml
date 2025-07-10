@@ -27,14 +27,14 @@ steps:
     # Update the running service in Docker Swarm with the new image
     update-stack:
         image: docker
-            environment:
-        # Pass registry credentials as environment variables
-        REGISTRY_USERNAME:
-            from_secret: REGISTRY_USERNAME
-        REGISTRY_PASSWORD:
-            from_secret: REGISTRY_PASSWORD
-        REGISTRY_URL: 
-            from_secret: REGISTRY_URL
+        environment:
+            # Pass registry credentials as environment variables
+            REGISTRY_USERNAME:
+                from_secret: REGISTRY_USERNAME
+            REGISTRY_PASSWORD:
+                from_secret: REGISTRY_PASSWORD
+            REGISTRY_URL: 
+                from_secret: REGISTRY_URL
         volumes:
             # Mount Docker socket to allow Docker CLI commands This needs Trust Volume checked in the repository settings in woodpeacker!
             - /var/run/docker.sock:/var/run/docker.sock
