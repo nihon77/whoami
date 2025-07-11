@@ -6,7 +6,7 @@ steps:
         
         settings:
             # Clone a repository from GitHub (main branch)
-            context: "https://github.com/traefik/whoami.git#master"
+            context: "./"
             # Use the Dockerfile in the root of the repository
             dockerfile: Dockerfile
             # Target repository in your private registry
